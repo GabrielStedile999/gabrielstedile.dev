@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { ButtonLink } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -51,6 +51,10 @@ export function Contact() {
               <ButtonLink href={site.github} target="_blank" rel="noreferrer">
                 <FaGithub className="size-4" aria-hidden />
                 GitHub
+              </ButtonLink>
+              <ButtonLink href="/resume">
+                <FileText className="size-4" aria-hidden />
+                Resume
               </ButtonLink>
             </div>
 

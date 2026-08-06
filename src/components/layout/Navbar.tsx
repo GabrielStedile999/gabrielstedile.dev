@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Menu, Search, X } from "lucide-react";
 import { OPEN_PALETTE_EVENT } from "@/components/CommandPalette";
 import { navLinks, site } from "@/content/site";
@@ -42,21 +43,25 @@ export function Navbar() {
         aria-label="Main navigation"
         className="border-edge mx-auto flex max-w-5xl items-center justify-between rounded-full border bg-[rgba(8,9,20,0.75)] py-2 pr-2 pl-4 backdrop-blur-md"
       >
-        <a href="#hero" className="flex items-center gap-2.5" aria-label="Home">
+        <Link
+          href="/#hero"
+          className="flex items-center gap-2.5"
+          aria-label="Home"
+        >
           <span className="from-accent-from to-accent-to text-background flex size-8 items-center justify-center rounded-full bg-gradient-to-br text-xs font-bold">
             {site.initials}
           </span>
           <span className="text-sm font-semibold tracking-tight">
             {site.name}
           </span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
+              <Link
+                href={`/${link.href}`}
                 className={cn(
                   "rounded-full px-3.5 py-1.5 text-sm transition-colors",
                   active === link.href.slice(1)
@@ -65,7 +70,7 @@ export function Navbar() {
                 )}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li>
@@ -84,12 +89,12 @@ export function Navbar() {
             </button>
           </li>
           <li>
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               className="from-accent-from to-accent-to text-background ml-1 rounded-full bg-gradient-to-r px-4 py-1.5 text-sm font-medium transition-all duration-300 hover:brightness-110"
             >
               Let&apos;s talk
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -111,8 +116,8 @@ export function Navbar() {
           <ul className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
+                <Link
+                  href={`/${link.href}`}
                   onClick={() => setMenuOpen(false)}
                   className={cn(
                     "block rounded-xl px-4 py-2.5 text-sm transition-colors",
@@ -122,7 +127,7 @@ export function Navbar() {
                   )}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

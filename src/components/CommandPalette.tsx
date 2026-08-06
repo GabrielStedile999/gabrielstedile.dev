@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
@@ -8,11 +9,13 @@ import {
   Check,
   Copy,
   Download,
+  FileText,
   Home,
   Layers,
   Mail,
   MapIcon,
   MessageCircle,
+  PenLine,
   Search,
   Trophy,
   User,
@@ -43,6 +46,7 @@ export function CommandPalette() {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const reduceMotion = useReducedMotion();
+  const router = useRouter();
 
   const close = useCallback(() => {
     setOpen(false);
@@ -54,8 +58,18 @@ export function CommandPalette() {
   const commands = useMemo<Command[]>(() => {
     const goTo = (hash: string) => () => {
       close();
-      document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
-      history.replaceState(null, "", hash);
+      const target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+        history.replaceState(null, "", hash);
+      } else {
+        // Section lives on the homepage — navigate there from subpages.
+        router.push(`/${hash}`);
+      }
+    };
+    const goToPage = (path: string) => () => {
+      close();
+      router.push(path);
     };
     return [
       {
@@ -113,6 +127,24 @@ export function CommandPalette() {
         group: "Navigate",
         icon: MessageCircle,
         run: goTo("#contact"),
+      },
+      {
+        id: "nav-resume",
+        label: "Resume page",
+        hint: "/resume",
+        keywords: "resume cv curriculum web page online print",
+        group: "Navigate",
+        icon: FileText,
+        run: goToPage("/resume"),
+      },
+      {
+        id: "nav-notes",
+        label: "Notes",
+        hint: "/notes",
+        keywords: "notes articles blog writing posts",
+        group: "Navigate",
+        icon: PenLine,
+        run: goToPage("/notes"),
       },
       {
         id: "act-resume",
@@ -184,7 +216,7 @@ export function CommandPalette() {
         },
       },
     ];
-  }, [close, copied]);
+  }, [close, copied, router]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();

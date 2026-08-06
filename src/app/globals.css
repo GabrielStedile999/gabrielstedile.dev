@@ -83,6 +83,31 @@ body {
   background: rgba(139, 124, 246, 0.35);
 }
 
+/* Print: light scheme for the resume page */
+@media print {
+  :root {
+    --background: #ffffff;
+    --surface: #ffffff;
+    --surface-raised: #ffffff;
+    --edge: #d4d4d4;
+    --edge-bright: #a3a3a3;
+    --foreground: #171717;
+    --muted: #404040;
+    --faint: #737373;
+    --accent-from: #171717;
+    --accent-to: #171717;
+  }
+
+  body {
+    background: #ffffff;
+    color: #171717;
+  }
+
+  .print-page {
+    padding: 0;
+  }
+}
+
 /* Top decorative gradient hairline, as a reusable utility */
 @utility gradient-hairline {
   background-image: linear-gradient(
