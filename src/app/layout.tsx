@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { CommandPalette } from "@/components/CommandPalette";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className="h-full antialiased">
       <body className="flex min-h-screen flex-col">
         {children}
+        <CommandPalette />
         <Analytics />
       </body>
     </html>

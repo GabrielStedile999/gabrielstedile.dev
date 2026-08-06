@@ -4,6 +4,7 @@ import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { Journey } from "@/components/sections/Journey";
 import { Profile } from "@/components/sections/Profile";
+import { Projects } from "@/components/sections/Projects";
 import { Proof } from "@/components/sections/Proof";
 import { StackSection } from "@/components/sections/StackSection";
 import { TechMarquee } from "@/components/sections/TechMarquee";
@@ -28,6 +29,7 @@ export default function Home() {
         <TechMarquee />
         <Profile />
         <Journey />
+        <Projects />
         <StackSection />
         <Proof />
         <WorkingStyle />

@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { journey } from "@/content/journey";
 
@@ -7,11 +8,13 @@ export function Journey() {
   return (
     <section id="journey" className="scroll-mt-24 py-24">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-6">
-        <SectionHeading
-          eyebrow="Journey"
-          title="A decade of getting closer to the user."
-          description="The stacks changed, the direction didn't: toward the decisions that make software feel right for the people using it."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Journey"
+            title="A decade of getting closer to the user."
+            description="The stacks changed, the direction didn't: toward the decisions that make software feel right for the people using it."
+          />
+        </Reveal>
 
         <ol className="relative mx-auto flex w-full max-w-3xl flex-col gap-8">
           {/* Vertical line */}
@@ -20,8 +23,13 @@ export function Journey() {
             className="from-accent-from/60 to-accent-to/10 absolute top-2 bottom-2 left-[3.25rem] w-px bg-gradient-to-b max-sm:hidden"
           />
 
-          {journey.map((entry) => (
-            <li key={entry.period + entry.title} className="relative">
+          {journey.map((entry, index) => (
+            <Reveal
+              as="li"
+              key={entry.period + entry.title}
+              delay={index * 0.07}
+              className="relative"
+            >
               <article className="flex gap-6 max-sm:flex-col max-sm:gap-3">
                 <span className="border-accent-from/40 bg-surface-raised text-accent-from z-10 flex h-fit w-[6.5rem] shrink-0 items-center justify-center rounded-full border px-3 py-1.5 font-mono text-xs">
                   {entry.period}
@@ -52,7 +60,7 @@ export function Journey() {
                   </p>
                 </Card>
               </article>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
+import { OPEN_PALETTE_EVENT } from "@/components/CommandPalette";
 import { navLinks, site } from "@/content/site";
 import { cn } from "@/lib/cn";
 
@@ -10,6 +11,11 @@ const SECTION_IDS = navLinks.map((link) => link.href.slice(1));
 export function Navbar() {
   const [active, setActive] = useState<string>("hero");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMac] = useState(() =>
+    typeof navigator === "undefined"
+      ? true
+      : /mac|iphone|ipad/i.test(navigator.platform),
+  );
 
   useEffect(() => {
     const sections = SECTION_IDS.map((id) =>
@@ -63,9 +69,24 @@ export function Navbar() {
             </li>
           ))}
           <li>
+            <button
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent(OPEN_PALETTE_EVENT))
+              }
+              aria-label="Open command palette"
+              className="border-edge bg-surface text-muted hover:border-edge-bright hover:text-foreground ml-2 flex items-center gap-2 rounded-full border px-3 py-1.5 font-mono text-xs transition-colors"
+            >
+              <Search className="size-3.5" aria-hidden />
+              <kbd suppressHydrationWarning className="tracking-wide">
+                {isMac ? "⌘K" : "Ctrl K"}
+              </kbd>
+            </button>
+          </li>
+          <li>
             <a
               href="#contact"
-              className="from-accent-from to-accent-to text-background ml-2 rounded-full bg-gradient-to-r px-4 py-1.5 text-sm font-medium transition-all duration-300 hover:brightness-110"
+              className="from-accent-from to-accent-to text-background ml-1 rounded-full bg-gradient-to-r px-4 py-1.5 text-sm font-medium transition-all duration-300 hover:brightness-110"
             >
               Let&apos;s talk
             </a>

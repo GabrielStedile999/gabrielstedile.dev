@@ -16,6 +16,7 @@ export const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "Profile", href: "#about" },
   { label: "Journey", href: "#journey" },
+  { label: "Work", href: "#work" },
   { label: "Stack", href: "#skills" },
   { label: "Proof", href: "#achievements" },
   { label: "Contact", href: "#contact" },
