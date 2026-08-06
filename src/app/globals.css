@@ -1,35 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  /* Base surfaces (dark-first design) */
+  /* ── Surfaces (dark-first) ─────────────────────────────── */
   --background: #080914;
   --surface: #0d0f1d;
   --surface-raised: #121527;
-  --border-subtle: rgba(148, 163, 255, 0.12);
 
-  /* Text */
+  /* ── Borders ───────────────────────────────────────────── */
+  --edge: rgba(148, 163, 255, 0.1);
+  --edge-bright: rgba(148, 163, 255, 0.28);
+
+  /* ── Text ──────────────────────────────────────────────── */
   --foreground: #e6e8f2;
   --muted: #9aa1b9;
+  --faint: #6b7290;
 
-  /* Accent gradient (purple → cyan) */
+  /* ── Accent gradient (purple → cyan) ───────────────────── */
   --accent-from: #8b7cf6;
   --accent-to: #4fd1e0;
+
+  /* ── Status ────────────────────────────────────────────── */
+  --success: #4ade80;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
+  --color-edge: var(--edge);
+  --color-edge-bright: var(--edge-bright);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
+  --color-faint: var(--faint);
   --color-accent-from: var(--accent-from);
   --color-accent-to: var(--accent-to);
+  --color-success: var(--success);
+
   --font-sans: "Inter Variable", system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  --radius-card: 1.25rem;
+
+  --shadow-glow: 0 0 24px 0 rgba(139, 124, 246, 0.25);
+  --shadow-card: 0 8px 32px -12px rgba(0, 0, 0, 0.6);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.55;
+      transform: scale(0.85);
+    }
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Inter Variable", system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(139, 124, 246, 0.35);
+}
+
+/* Top decorative gradient hairline, as a reusable utility */
+@utility gradient-hairline {
+  background-image: linear-gradient(
+    90deg,
+    var(--accent-from),
+    var(--accent-to),
+    transparent 60%
+  );
+  height: 2px;
 }
