@@ -1,22 +1,23 @@
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { workingHabits } from "@/content/workingStyle";
+import type { Dict } from "@/i18n";
 
-export function WorkingStyle() {
+export function WorkingStyle({ dict }: { dict: Dict }) {
+  const t = dict.workingStyle;
   return (
     <section className="py-24">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-6">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-14 px-6">
         <Reveal>
           <SectionHeading
-            eyebrow="Working style"
-            title="The habits behind the delivery."
-            description="Practical principles I bring to every product team."
+            eyebrow={t.eyebrow}
+            title={t.title}
+            description={t.description}
           />
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {workingHabits.map((habit, index) => (
+          {t.habits.map((habit, index) => (
             <Reveal key={habit.title} delay={index * 0.08}>
               <Card className="flex h-full flex-col gap-3">
                 <h3 className="text-base font-semibold tracking-tight">

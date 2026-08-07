@@ -2,17 +2,18 @@ import { ArrowUpRight } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { journey } from "@/content/journey";
+import type { Dict } from "@/i18n";
 
-export function Journey() {
+export function Journey({ dict }: { dict: Dict }) {
+  const t = dict.journey;
   return (
     <section id="journey" className="scroll-mt-24 py-24">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-6">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-14 px-6">
         <Reveal>
           <SectionHeading
-            eyebrow="Journey"
-            title="A decade of getting closer to the user."
-            description="The stacks changed, the direction didn't: toward the decisions that make software feel right for the people using it."
+            eyebrow={t.eyebrow}
+            title={t.title}
+            description={t.description}
           />
         </Reveal>
 
@@ -23,7 +24,7 @@ export function Journey() {
             className="from-accent-from/60 to-accent-to/10 absolute top-2 bottom-2 left-[3.25rem] w-px bg-gradient-to-b max-sm:hidden"
           />
 
-          {journey.map((entry, index) => (
+          {t.entries.map((entry, index) => (
             <Reveal
               as="li"
               key={entry.period + entry.title}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { site } from "@/content/site";
+import { getDict, homePath, localeFromPathname } from "@/i18n";
 import { cn } from "@/lib/cn";
 
 /** Event other components can dispatch to open the palette. */
@@ -33,7 +34,7 @@ type Command = {
   label: string;
   hint?: string;
   keywords: string;
-  group: "Navigate" | "Actions";
+  group: "navigate" | "actions";
   icon: LucideIcon | typeof FaGithub;
   run: () => void | Promise<void>;
 };
@@ -47,6 +48,12 @@ export function CommandPalette() {
   const listRef = useRef<HTMLUListElement>(null);
   const reduceMotion = useReducedMotion();
   const router = useRouter();
+  const pathname = usePathname();
+
+  const locale = localeFromPathname(pathname ?? "/");
+  const dict = getDict(locale);
+  const t = dict.palette;
+  const home = homePath(locale);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -63,8 +70,8 @@ export function CommandPalette() {
         target.scrollIntoView({ behavior: "smooth" });
         history.replaceState(null, "", hash);
       } else {
-        // Section lives on the homepage — navigate there from subpages.
-        router.push(`/${hash}`);
+        // Section lives on the (localized) homepage — navigate there.
+        router.push(`${home}${hash}`);
       }
     };
     const goToPage = (path: string) => () => {
@@ -74,84 +81,87 @@ export function CommandPalette() {
     return [
       {
         id: "nav-home",
-        label: "Home",
-        keywords: "home hero top start",
-        group: "Navigate",
+        label: t.commands.home,
+        keywords: "home hero top start inicio",
+        group: "navigate",
         icon: Home,
         run: goTo("#hero"),
       },
       {
         id: "nav-profile",
-        label: "Profile",
-        keywords: "profile about bio who",
-        group: "Navigate",
+        label: t.commands.profile,
+        keywords: "profile about bio who perfil sobre",
+        group: "navigate",
         icon: User,
         run: goTo("#about"),
       },
       {
         id: "nav-journey",
-        label: "Journey",
-        keywords: "journey experience career timeline history",
-        group: "Navigate",
+        label: t.commands.journey,
+        keywords:
+          "journey experience career timeline history trajetoria experiencia carreira",
+        group: "navigate",
         icon: MapIcon,
         run: goTo("#journey"),
       },
       {
         id: "nav-work",
-        label: "Selected work",
-        keywords: "work projects portfolio case studies clients",
-        group: "Navigate",
+        label: t.commands.work,
+        keywords:
+          "work projects portfolio case studies clients trabalhos projetos",
+        group: "navigate",
         icon: Briefcase,
         run: goTo("#work"),
       },
       {
         id: "nav-stack",
-        label: "Stack",
-        keywords: "stack skills technologies tools react typescript",
-        group: "Navigate",
+        label: t.commands.stack,
+        keywords:
+          "stack skills technologies tools react typescript habilidades tecnologias",
+        group: "navigate",
         icon: Layers,
         run: goTo("#skills"),
       },
       {
         id: "nav-proof",
-        label: "Proof",
-        keywords: "proof achievements metrics numbers",
-        group: "Navigate",
+        label: t.commands.proof,
+        keywords: "proof achievements metrics numbers resultados conquistas",
+        group: "navigate",
         icon: Trophy,
         run: goTo("#achievements"),
       },
       {
         id: "nav-contact",
-        label: "Contact",
-        keywords: "contact talk hire reach email",
-        group: "Navigate",
+        label: t.commands.contact,
+        keywords: "contact talk hire reach email contato conversar",
+        group: "navigate",
         icon: MessageCircle,
         run: goTo("#contact"),
       },
       {
         id: "nav-resume",
-        label: "Resume page",
-        hint: "/resume",
-        keywords: "resume cv curriculum web page online print",
-        group: "Navigate",
+        label: t.commands.resumePage,
+        hint: dict.resume.path,
+        keywords: "resume cv curriculum web page online print curriculo",
+        group: "navigate",
         icon: FileText,
-        run: goToPage("/resume"),
+        run: goToPage(dict.resume.path),
       },
       {
         id: "nav-notes",
-        label: "Notes",
+        label: t.commands.notes,
         hint: "/notes",
-        keywords: "notes articles blog writing posts",
-        group: "Navigate",
+        keywords: "notes articles blog writing posts notas artigos",
+        group: "navigate",
         icon: PenLine,
         run: goToPage("/notes"),
       },
       {
         id: "act-resume",
-        label: "Download resume",
-        hint: "PDF",
-        keywords: "resume cv download pdf curriculum",
-        group: "Actions",
+        label: t.commands.downloadResume,
+        hint: t.hints.pdf,
+        keywords: "resume cv download pdf curriculum curriculo baixar",
+        group: "actions",
         icon: Download,
         run: () => {
           close();
@@ -163,10 +173,10 @@ export function CommandPalette() {
       },
       {
         id: "act-copy-email",
-        label: copied ? "Email copied!" : "Copy email address",
+        label: copied ? t.commands.copied : t.commands.copyEmail,
         hint: site.email,
-        keywords: "copy email address clipboard",
-        group: "Actions",
+        keywords: "copy email address clipboard copiar",
+        group: "actions",
         icon: copied ? Check : Copy,
         run: async () => {
           try {
@@ -181,10 +191,10 @@ export function CommandPalette() {
       },
       {
         id: "act-email",
-        label: "Send an email",
-        hint: "mailto",
-        keywords: "email send mail message contact",
-        group: "Actions",
+        label: t.commands.sendEmail,
+        hint: t.hints.mailto,
+        keywords: "email send mail message contact enviar",
+        group: "actions",
         icon: Mail,
         run: () => {
           close();
@@ -193,10 +203,10 @@ export function CommandPalette() {
       },
       {
         id: "act-github",
-        label: "Open GitHub",
-        hint: "new tab",
-        keywords: "github code repositories source",
-        group: "Actions",
+        label: t.commands.openGithub,
+        hint: t.hints.newTab,
+        keywords: "github code repositories source codigo",
+        group: "actions",
         icon: FaGithub,
         run: () => {
           close();
@@ -205,10 +215,10 @@ export function CommandPalette() {
       },
       {
         id: "act-linkedin",
-        label: "Open LinkedIn",
-        hint: "new tab",
+        label: t.commands.openLinkedin,
+        hint: t.hints.newTab,
         keywords: "linkedin profile network connect",
-        group: "Actions",
+        group: "actions",
         icon: FaLinkedinIn,
         run: () => {
           close();
@@ -216,7 +226,7 @@ export function CommandPalette() {
         },
       },
     ];
-  }, [close, copied, router]);
+  }, [close, copied, router, t, dict.resume.path, home]);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -228,14 +238,18 @@ export function CommandPalette() {
   }, [commands, query]);
 
   const groups = useMemo(() => {
-    const order: Command["group"][] = ["Navigate", "Actions"];
+    const order = [
+      { key: "navigate" as const, label: t.groups.navigate },
+      { key: "actions" as const, label: t.groups.actions },
+    ];
     return order
-      .map((group) => ({
-        group,
-        items: filtered.filter((command) => command.group === group),
+      .map(({ key, label }) => ({
+        key,
+        label,
+        items: filtered.filter((command) => command.group === key),
       }))
       .filter(({ items }) => items.length > 0);
-  }, [filtered]);
+  }, [filtered, t.groups.navigate, t.groups.actions]);
 
   // Global shortcut: ⌘K / Ctrl+K, plus the custom open event
   useEffect(() => {
@@ -311,7 +325,7 @@ export function CommandPalette() {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-label="Command palette"
+            aria-label={t.dialogAria}
             initial={
               reduceMotion
                 ? { opacity: 0 }
@@ -334,8 +348,8 @@ export function CommandPalette() {
                   setActiveIndex(0);
                 }}
                 onKeyDown={onInputKeyDown}
-                placeholder="Type a command or search…"
-                aria-label="Search commands"
+                placeholder={t.placeholder}
+                aria-label={t.searchAria}
                 role="combobox"
                 aria-expanded="true"
                 aria-controls="palette-list"
@@ -351,13 +365,13 @@ export function CommandPalette() {
               ref={listRef}
               id="palette-list"
               role="listbox"
-              aria-label="Commands"
+              aria-label={t.listAria}
               className="max-h-[50dvh] overflow-y-auto p-2"
             >
-              {groups.map(({ group, items }) => (
-                <li key={group}>
+              {groups.map(({ key, label, items }) => (
+                <li key={key}>
                   <p className="text-faint px-3 pt-2.5 pb-1.5 font-mono text-[10px] tracking-[0.25em] uppercase">
-                    {group}
+                    {label}
                   </p>
                   <ul>
                     {items.map((command) => {
@@ -404,14 +418,14 @@ export function CommandPalette() {
               ))}
               {filtered.length === 0 && (
                 <li className="text-faint px-3 py-8 text-center text-sm">
-                  No results for &ldquo;{query}&rdquo;
+                  {t.noResultsPrefix} &ldquo;{query}&rdquo;
                 </li>
               )}
             </ul>
 
             <div className="border-edge text-faint flex items-center gap-3 border-t px-4 py-2.5 font-mono text-[10px]">
-              <span>↑↓ navigate</span>
-              <span>↵ select</span>
+              <span>{t.hintNavigate}</span>
+              <span>{t.hintSelect}</span>
               <span className="ml-auto">
                 {site.initials} · {site.domain}
               </span>

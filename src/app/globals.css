@@ -13,7 +13,7 @@
   /* ── Text ──────────────────────────────────────────────── */
   --foreground: #e6e8f2;
   --muted: #9aa1b9;
-  --faint: #6b7290;
+  --faint: #8289a4; /* ≥5:1 contrast on all dark surfaces (WCAG AA) */
 
   /* ── Accent gradient (purple → cyan) ───────────────────── */
   --accent-from: #8b7cf6;

@@ -11,6 +11,8 @@ type ModalProps = {
   onClose: () => void;
   /** Accessible name for the dialog. */
   label: string;
+  /** Accessible label for the close button. */
+  closeLabel?: string;
   children: React.ReactNode;
   className?: string;
 };
@@ -26,6 +28,7 @@ export function Modal({
   open,
   onClose,
   label,
+  closeLabel = "Close dialog",
   children,
   className,
 }: ModalProps) {
@@ -119,7 +122,7 @@ export function Modal({
             <button
               type="button"
               onClick={onClose}
-              aria-label="Close dialog"
+              aria-label={closeLabel}
               className="border-edge bg-surface-raised text-muted hover:border-edge-bright hover:text-foreground absolute top-4 right-4 z-10 flex size-9 items-center justify-center rounded-full border transition-colors"
             >
               <X className="size-4" aria-hidden />

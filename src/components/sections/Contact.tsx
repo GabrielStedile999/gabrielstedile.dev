@@ -7,21 +7,23 @@ import { Pill } from "@/components/ui/Pill";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/content/site";
+import type { Dict } from "@/i18n";
 
-export function Contact() {
+export function Contact({ dict }: { dict: Dict }) {
+  const t = dict.contact;
   return (
     <section id="contact" className="scroll-mt-24 py-24">
-      <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-12 px-6">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-12 px-6">
         <Reveal>
           <SectionHeading
-            eyebrow="Contact"
+            eyebrow={t.eyebrow}
             title={
               <>
-                Let&apos;s build something people{" "}
-                <GradientText>enjoy using.</GradientText>
+                {t.titlePre}
+                <GradientText>{t.titleGradient}</GradientText>
               </>
             }
-            description="Tell me about the product, the stack and what success looks like — I'll bring frontend depth and the range to go further when needed."
+            description={t.description}
           />
         </Reveal>
 
@@ -31,18 +33,14 @@ export function Contact() {
             className="flex w-full max-w-2xl flex-col items-center gap-6 p-8 text-center"
           >
             <Pill dot tone="success">
-              Open to work
+              {t.openToWork}
             </Pill>
-            <p className="text-muted text-sm leading-relaxed">
-              Best fit: senior frontend or frontend-leaning full-stack roles in
-              product-driven teams — remote, Brazil or international. Replies
-              within 1–2 business days.
-            </p>
+            <p className="text-muted text-sm leading-relaxed">{t.copy}</p>
 
             <div className="flex flex-wrap items-center justify-center gap-3">
               <ButtonLink variant="primary" href={`mailto:${site.email}`}>
                 <Mail className="size-4" aria-hidden />
-                Email me
+                {t.emailBtn}
               </ButtonLink>
               <ButtonLink href={site.linkedin} target="_blank" rel="noreferrer">
                 <FaLinkedinIn className="size-4" aria-hidden />
@@ -52,9 +50,9 @@ export function Contact() {
                 <FaGithub className="size-4" aria-hidden />
                 GitHub
               </ButtonLink>
-              <ButtonLink href="/resume">
+              <ButtonLink href={dict.resume.path}>
                 <FileText className="size-4" aria-hidden />
-                Resume
+                {t.resumeBtn}
               </ButtonLink>
             </div>
 

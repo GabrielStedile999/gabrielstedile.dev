@@ -2,7 +2,7 @@
 
 import { Printer } from "lucide-react";
 
-export function PrintButton() {
+export function PrintButton({ label = "Print" }: { label?: string }) {
   return (
     <button
       type="button"
@@ -10,7 +10,7 @@ export function PrintButton() {
       className="border-edge text-foreground hover:border-edge-bright bg-surface-raised inline-flex items-center justify-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-all duration-300"
     >
       <Printer className="size-4" aria-hidden />
-      Print
+      {label}
     </button>
   );
 }

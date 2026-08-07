@@ -6,38 +6,35 @@ import { ArrowUpRight, Lock } from "lucide-react";
 import { Modal } from "@/components/ui/Modal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
-import {
-  categories,
-  projects,
-  type Project,
-  type ProjectCategory,
-} from "@/content/projects";
+import type { Project, ProjectCategory } from "@/content/projects";
+import type { Dict } from "@/i18n";
 import { cn } from "@/lib/cn";
 
-export function Projects() {
+export function Projects({ dict }: { dict: Dict }) {
+  const t = dict.work;
   const [filter, setFilter] = useState<ProjectCategory | "all">("all");
   const [selected, setSelected] = useState<Project | null>(null);
   const reduceMotion = useReducedMotion();
 
   const visible =
-    filter === "all" ? projects : projects.filter((p) => p.category === filter);
+    filter === "all" ? t.items : t.items.filter((p) => p.category === filter);
 
   return (
     <section id="work" className="scroll-mt-24 py-24">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6">
         <SectionHeading
-          eyebrow="Selected work"
-          title="Products I've helped ship."
-          description="Most client work lives under NDA — here it's described at the level I can share, with the role and stack intact."
+          eyebrow={t.eyebrow}
+          title={t.title}
+          description={t.description}
         />
 
         {/* Filters */}
         <div
           role="tablist"
-          aria-label="Filter projects by category"
+          aria-label={t.filterAria}
           className="flex flex-wrap justify-center gap-2"
         >
-          {categories.map((category) => {
+          {t.categories.map((category) => {
             const isActive = filter === category.value;
             return (
               <button
@@ -99,10 +96,10 @@ export function Projects() {
                     {project.nda ? (
                       <span
                         className="text-faint flex items-center gap-1 font-mono text-[10px]"
-                        title="Client work under NDA"
+                        title={t.ndaTitle}
                       >
                         <Lock className="size-3" aria-hidden />
-                        NDA
+                        {t.ndaShort}
                       </span>
                     ) : (
                       <ArrowUpRight
@@ -132,7 +129,7 @@ export function Projects() {
                   </div>
 
                   <span className="text-accent-to font-mono text-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                    View details →
+                    {t.viewDetails}
                   </span>
                 </button>
               </motion.li>
@@ -145,7 +142,12 @@ export function Projects() {
       <Modal
         open={selected !== null}
         onClose={() => setSelected(null)}
-        label={selected ? `${selected.title} — details` : "Project details"}
+        label={
+          selected
+            ? `${selected.title} ${t.modalLabelSuffix}`
+            : t.modalFallbackLabel
+        }
+        closeLabel={t.closeAria}
       >
         {selected && (
           <article className="flex flex-col gap-6">
@@ -159,14 +161,14 @@ export function Projects() {
               {selected.nda && (
                 <p className="text-faint flex items-center gap-1.5 font-mono text-xs">
                   <Lock className="size-3" aria-hidden />
-                  Client work under NDA — described at a shareable level.
+                  {t.ndaLong}
                 </p>
               )}
             </header>
 
             <div className="flex flex-col gap-2">
               <h4 className="text-accent-to font-mono text-xs tracking-[0.25em] uppercase">
-                Context
+                {t.modalContext}
               </h4>
               <p className="text-muted text-sm leading-relaxed">
                 {selected.context}
@@ -175,7 +177,7 @@ export function Projects() {
 
             <div className="flex flex-col gap-2">
               <h4 className="text-accent-to font-mono text-xs tracking-[0.25em] uppercase">
-                What I did
+                {t.modalWhat}
               </h4>
               <ul className="flex flex-col gap-2">
                 {selected.contributions.map((item) => (
@@ -195,7 +197,7 @@ export function Projects() {
 
             <div className="flex flex-col gap-2">
               <h4 className="text-accent-to font-mono text-xs tracking-[0.25em] uppercase">
-                Outcome
+                {t.modalOutcome}
               </h4>
               <p className="text-muted text-sm leading-relaxed">
                 {selected.outcome}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { CommandPalette } from "@/components/CommandPalette";
+import { LangAttribute } from "@/components/LangAttribute";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";
@@ -28,7 +29,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Gabriel Stedile", url: SITE_URL }],
   creator: "Gabriel Stedile",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { en: "/", "pt-BR": "/pt" },
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -92,13 +96,18 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className="h-full antialiased"
+    >
       <body className="flex min-h-screen flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         {children}
+        <LangAttribute />
         <CommandPalette />
         <Analytics />
       </body>

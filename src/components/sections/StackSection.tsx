@@ -1,42 +1,51 @@
+import { Bot, Component, Gauge, Palette, Server, Workflow } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { GradientText } from "@/components/ui/GradientText";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { stackAreas } from "@/content/stack";
+import type { Dict } from "@/i18n";
 
-export function StackSection() {
+/** Icons aligned by index with dict.stack.areas. */
+const AREA_ICONS = [Component, Workflow, Gauge, Palette, Server, Bot];
+
+export function StackSection({ dict }: { dict: Dict }) {
+  const t = dict.stack;
   return (
     <section id="skills" className="scroll-mt-24 py-24">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-6">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-14 px-6">
         <Reveal>
           <SectionHeading
-            eyebrow="Stack"
+            eyebrow={t.eyebrow}
             title={
               <>
-                Organized by <GradientText>responsibility</GradientText>, not by
-                logo count.
+                {t.titlePre}
+                <GradientText>{t.titleGradient}</GradientText>
+                {t.titlePost}
               </>
             }
-            description="Tools change. Knowing which component boundary, data contract or millisecond deserves attention is what stays."
+            description={t.description}
           />
         </Reveal>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {stackAreas.map((area, index) => (
-            <Reveal key={area.title} delay={(index % 3) * 0.08}>
-              <Card className="flex h-full flex-col gap-4">
-                <span className="border-edge bg-surface-raised text-accent-from flex size-11 items-center justify-center rounded-xl border">
-                  <area.icon className="size-5" aria-hidden />
-                </span>
-                <h3 className="text-base font-semibold tracking-tight">
-                  {area.title}
-                </h3>
-                <p className="text-muted text-sm leading-relaxed">
-                  {area.description}
-                </p>
-              </Card>
-            </Reveal>
-          ))}
+          {t.areas.map((area, index) => {
+            const Icon = AREA_ICONS[index % AREA_ICONS.length];
+            return (
+              <Reveal key={area.title} delay={(index % 3) * 0.08}>
+                <Card className="flex h-full flex-col gap-4">
+                  <span className="border-edge bg-surface-raised text-accent-from flex size-11 items-center justify-center rounded-xl border">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <h3 className="text-base font-semibold tracking-tight">
+                    {area.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed">
+                    {area.description}
+                  </p>
+                </Card>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
