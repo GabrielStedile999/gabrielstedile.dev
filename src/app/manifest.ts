@@ -4,10 +4,10 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Gabriel Stedile — Senior Frontend Engineer",
+    name: "Gabriel Stedile — Senior Full Stack Engineer",
     short_name: "G. Stedile",
     description:
-      "Portfolio of Gabriel Stedile — React, TypeScript, Node.js and AI integration.",
+      "Portfolio of Gabriel Stedile — full-stack web development with React, TypeScript, Node.js and AI integration.",
     start_url: "/",
     display: "standalone",
     background_color: "#080914",

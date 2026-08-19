@@ -5,9 +5,9 @@ export const pt: Dict = {
   htmlLang: "pt-BR",
 
   meta: {
-    title: "Gabriel Stedile | Engenheiro Frontend Sênior",
+    title: "Gabriel Stedile | Engenheiro Full Stack Sênior",
     description:
-      "Engenheiro Frontend Sênior — React, TypeScript, Node.js e integração com IA. Mais de 10 anos construindo aplicações web para clientes globais.",
+      "Engenheiro Full Stack Sênior — React, TypeScript, Node.js e integração com IA. Mais de 10 anos construindo produtos web para clientes globais.",
   },
 
   nav: {
@@ -29,12 +29,12 @@ export const pt: Dict = {
   },
 
   hero: {
-    eyebrow: "Engenharia frontend com visão de produto",
+    eyebrow: "Engenharia full stack com visão de produto",
     titlePre: "Interfaces que fazem o complexo ",
     titleGradient: "parecer simples.",
-    lead: "React em primeiro lugar e forma de produto: transformo requisitos de negócio em aplicações web rápidas e acessíveis — e na camada Node.js por trás delas — para marcas globais e startups em crescimento.",
+    lead: "Construo produtos web de ponta a ponta — React e TypeScript na frente, APIs Node.js por trás — para marcas globais e startups em crescimento.",
     monoLine:
-      "Engenheiro Frontend Sênior / Full Stack Capaz / Integração com IA",
+      "Engenheiro Full Stack Sênior / React · Node.js / Integração com IA",
     ctaWork: "Explore meu trabalho",
     ctaResume: "Baixar currículo",
     availability: "Aberto a vagas remotas",
@@ -52,7 +52,7 @@ export const pt: Dict = {
       a11yLabel: "a11y:",
       a11yValue: "testado com teclado + leitor de tela",
       aiLabel: "ia:",
-      aiValue: "agentes conectados · 0 pixels alucinados",
+      aiValue: "features com LLM · fluxos com agentes",
     },
     stats: {
       years: "Anos de experiência",
@@ -66,29 +66,31 @@ export const pt: Dict = {
 
   profile: {
     eyebrow: "Perfil",
-    titlePre: "React em primeiro lugar. IA no horizonte. ",
-    titleGradient: "Pé na realidade do produto.",
+    titlePre: "Profundidade em frontend, ",
+    titleGradient: "alcance full stack.",
     paragraphs: [
-      "Sou o Gabriel, engenheiro frontend de Florianópolis com mais de 10 anos entre software houses, fintech, SaaS e consultoria global. Minha experiência mais profunda é em React e TypeScript — entregando para clientes como IBM, Pfizer, Audi, AKQA e BCW, onde a régua de qualidade e os prazos são inegociáveis.",
-      "Quando o produto precisa, desço mais na stack: já construí do zero a API de um SaaS B2B em Node.js, implementei autenticação, autorização e paginação, e desenhei camadas BFF em função do que as interfaces realmente consomem.",
+      "Sou o Gabriel, engenheiro full stack de Florianópolis, com mais de 10 anos entre software houses, fintech, SaaS e consultoria global. A maior parte desse tempo foi em React e TypeScript, entregando para clientes como IBM, Pfizer, Audi, AKQA e BCW.",
+      "O backend faz parte da minha rotina, não é nota de rodapé: já construí do zero a API de um SaaS B2B em Node.js, trabalhei com autenticação, autorização, PostgreSQL e Docker, e desenhei camadas BFF em função do que as interfaces realmente consomem.",
       "No momento estou aprofundando integração com IA — agentes, funcionalidades com LLMs e fluxos de engenharia assistidos por IA — por meio de um MBA em Engenharia de Software com IA e projetos práticos.",
     ],
     principles: [
-      "Ser dono da interface de ponta a ponta — do handoff de design às métricas em produção.",
-      "Tratar estados de carregamento, vazio e erro como parte do produto, não como sobra.",
-      "Entregar rápido sem deixar um código que a próxima pessoa não consiga ler.",
+      "Ser dono da feature de ponta a ponta — do handoff de design à API e às métricas em produção.",
+      "Interfaces preparadas para o mundo real — incluindo estados de carregamento, erro e dados vazios.",
+      "Qualidade verificável: testes automatizados e revisão de código como parte do fluxo, não como etapa extra.",
+      "Comunicação direta com produto e design — alinhar antes de construir evita retrabalho depois.",
+      "Entregar com velocidade sem abrir mão de qualidade — código legível e documentado, pronto para a próxima pessoa dar continuidade.",
     ],
     asideAria: "Resumo do perfil do desenvolvedor",
     photoAlt: "Retrato de Gabriel Stedile",
     cardTagline:
-      "Engenheiro frontend para times de produto que se importam com os detalhes.",
+      "Engenheiro full stack para times de produto — da interface à API.",
     basedIn: {
       label: "Baseado em",
       value: "Florianópolis, Brasil · remote-friendly",
     },
     deepest: {
       label: "Maior profundidade",
-      value: "React, TypeScript, Next.js, Node.js BFF",
+      value: "React, TypeScript, Next.js, Node.js",
     },
     expanding: {
       label: "Em expansão",
@@ -202,7 +204,7 @@ export const pt: Dict = {
           "Trabalhei design-to-code a partir de handoffs de alta fidelidade, com precisão de pixel",
         ],
         outcome:
-          "Experiências que passaram pelas camadas de revisão de conformidade que a indústria farmacêutica exige — prova de que velocidade e rigor podem coexistir.",
+          "Experiências que passaram pelas camadas de revisão de conformidade da indústria farmacêutica sem estourar prazos.",
         stack: ["React", "TypeScript", "Acessibilidade", "Design systems"],
         nda: true,
       },
@@ -300,6 +302,35 @@ export const pt: Dict = {
         nda: true,
       },
       {
+        id: "necroforja",
+        title: "NecroForja — gestor de campanhas de tabuleiro",
+        client: "Pessoal · necroforja.com.br",
+        category: "personal",
+        summary:
+          "Gestor full stack de campanhas de Necromunda, em produção — com um assistente de regras com IA construído sobre RAG.",
+        context:
+          "Um produto completo, construído de ponta a ponta e no ar em necroforja.com.br: gerencia uma campanha de Necromunda com múltiplos ciclos — jogadores, gangues, desafios e rankings — com cálculos automáticos de rating e riqueza.",
+        contributions: [
+          "Construí a stack inteira: frontend Next.js App Router, PostgreSQL com Drizzle ORM e autenticação Auth.js com rotas protegidas por papel",
+          "Implementei um assistente de regras com IA: RAG sobre livros de regras indexados, com embeddings pgvector e Claude, respondendo com citação de páginas",
+          "Configurei testes automatizados (Vitest + Playwright e2e), seed data para desenvolvimento local e deploy na Vercel",
+        ],
+        outcome:
+          "Um produto no ar rodando uma campanha real — full stack e integração com IA funcionando juntos em produção.",
+        stack: [
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL",
+          "Drizzle ORM",
+          "RAG",
+          "Claude API",
+        ],
+        link: {
+          label: "Ver código no GitHub",
+          url: "https://github.com/GabrielStedile999/necroforja",
+        },
+      },
+      {
         id: "portfolio-ai",
         title: "gabrielstedile.dev — este site",
         client: "Pessoal · Assistido por IA",
@@ -314,7 +345,7 @@ export const pt: Dict = {
           "Sou dono do pipeline de deploy: GitHub → Vercel, com Web Analytics em produção",
         ],
         outcome:
-          "O site que você está lendo — entregue em dias, não semanas, sem abrir mão de qualidade de código.",
+          "O site que você está lendo — construído em dias, em entregas faseadas e revisadas.",
         stack: [
           "Next.js",
           "TypeScript",
@@ -332,16 +363,21 @@ export const pt: Dict = {
 
   stack: {
     eyebrow: "Stack",
-    titlePre: "Organizada por ",
-    titleGradient: "responsabilidade",
-    titlePost: ", não por contagem de logos.",
+    titlePre: "O que eu resolvo, ",
+    titleGradient: "não só o que eu uso.",
+    titlePost: "",
     description:
-      "Ferramentas mudam. Saber qual fronteira de componente, contrato de dados ou milissegundo merece atenção é o que fica.",
+      "Mais que uma lista de tecnologias: as áreas em que assumo responsabilidade dentro de um produto — da interface à API.",
     areas: [
       {
         title: "Arquitetura de componentes",
         description:
           "Design systems, padrões de composição e componentes acessíveis que se mantêm consistentes entre times, marcas e anos de evolução do produto.",
+      },
+      {
+        title: "APIs e backend",
+        description:
+          "Serviços Node.js: APIs REST e GraphQL, autenticação e autorização, PostgreSQL, Docker — e camadas BFF moldadas pelo que o produto precisa.",
       },
       {
         title: "Estado e fluxo de dados",
@@ -359,11 +395,6 @@ export const pt: Dict = {
           "Implementação fiel a partir do handoff de design, sistemas baseados em Tailwind, e animação com GSAP e Motion aplicada com contenção e intenção.",
       },
       {
-        title: "Backend for frontend",
-        description:
-          "APIs Node.js, autenticação e autorização, paginação e camadas BFF moldadas pelo que a interface realmente precisa.",
-      },
-      {
         title: "Integração com IA",
         description:
           "Funcionalidades com LLMs, agentes de IA e pipelines de retrieval conectados a UIs de produto — além de fluxos assistidos por IA que encurtam ciclos de desenvolvimento.",
@@ -373,9 +404,9 @@ export const pt: Dict = {
 
   proof: {
     eyebrow: "Resultados",
-    title: "Sinais de entrega sustentada.",
+    title: "Os números por trás do trabalho.",
     description:
-      "Não são números de vaidade — é o escopo e a repetição por trás de uma década entregando.",
+      "Contexto rápido antes dos detalhes: o volume e o tipo de entrega que sustentam o que o resto do site mostra.",
     metrics: [
       {
         value: 10,
@@ -399,9 +430,9 @@ export const pt: Dict = {
       },
       {
         value: 3,
-        title: "Camadas da stack dominadas",
+        title: "Camadas em produção",
         description:
-          "UI, API e IA — mais profundo na interface, capaz na camada Node.js por trás dela, e em expansão para integração com LLMs.",
+          "UI, API e IA — trabalho diário entre interfaces React e os serviços Node.js por trás delas, agora em expansão para integração com LLMs.",
       },
     ],
   },
@@ -414,20 +445,20 @@ export const pt: Dict = {
       {
         title: "Ownership de ponta a ponta",
         description:
-          "Uma feature não está pronta no merge. Eu a acompanho pelo rollout, métricas de usuários reais e feedback — e ajusto quando a produção discorda do plano.",
+          "Trabalho com senso de dono: me envolvo no problema além do código e me comprometo com o impacto e o valor real da entrega — acompanhando métricas e feedback depois do lançamento, não só até o merge.",
         punchline: "Entregue significa medido",
       },
       {
-        title: "Casos extremos primeiro",
+        title: "Aprendizado contínuo",
         description:
-          "Estados de carregamento, vazio e erro são desenhados junto com o caminho feliz, não depois dele. É aí que os usuários decidem se um produto parece sólido.",
-        punchline: "Os detalhes são o produto",
+          "Cada projeto expande o repertório. Mantenho o hábito de estudar e me adaptar como filosofia de vida. Conhecimento que se transforma em trabalho real.",
+        punchline: "Dedicação que vira entrega",
       },
       {
         title: "Alinhamento como hábito",
         description:
           "Transformo requisitos vagos em contratos explícitos, exponho trade-offs cedo e mantenho produto, design e engenharia na mesma direção.",
-        punchline: "Menos surpresas, times mais rápidos",
+        punchline: "Menos surpresas, decisões mais orientadas",
       },
     ],
   },
@@ -437,16 +468,15 @@ export const pt: Dict = {
     titlePre: "Vamos construir algo que as pessoas ",
     titleGradient: "gostem de usar.",
     description:
-      "Me conte sobre o produto, a stack e como é o sucesso — eu trago profundidade de frontend e o alcance para ir além quando necessário.",
+      "Me conte sobre o produto, a stack e como é o sucesso — eu trabalho a feature inteira, da interface à API.",
     openToWork: "Aberto a propostas",
-    copy: "Melhor encaixe: vagas sênior de frontend ou full-stack com foco em frontend, em times orientados a produto — remoto, Brasil ou internacional. Respondo em 1–2 dias úteis.",
+    copy: "Melhor encaixe: vagas sênior full stack ou com peso em frontend, em times orientados a produto — remoto, Brasil ou internacional. Respondo em 1–2 dias úteis.",
     emailBtn: "Me envie um e-mail",
     resumeBtn: "Currículo",
   },
 
   footer: {
-    tagline:
-      "Engenheiro Frontend Sênior — construindo interfaces que movem produtos para a frente.",
+    tagline: "Engenheiro Full Stack Sênior — produtos web da interface à API.",
     ariaLabel: "Rodapé",
     links: [
       { label: "Início", href: "/pt" },
@@ -475,7 +505,7 @@ export const pt: Dict = {
   resume: {
     metaTitle: "Currículo",
     metaDescription:
-      "Currículo de Gabriel Stedile — Engenheiro Frontend Sênior com mais de 10 anos de experiência em React, TypeScript, Node.js e integração com IA.",
+      "Currículo de Gabriel Stedile — Engenheiro Full Stack Sênior com mais de 10 anos de experiência em React, TypeScript, Node.js e integração com IA.",
     path: "/pt/resume",
     actionsAria: "Ações do currículo",
     backLabel: "gabrielstedile.dev/pt",
@@ -487,7 +517,7 @@ export const pt: Dict = {
       aria: "EN · View resume in English",
     },
     roleLine:
-      "Engenheiro Frontend Sênior | React · TypeScript · Node.js · Integração com IA",
+      "Engenheiro Full Stack Sênior | React · TypeScript · Node.js · Integração com IA",
     availability: "Aberto a vagas remotas",
     sections: {
       summary: "Resumo Profissional",
@@ -497,7 +527,7 @@ export const pt: Dict = {
       languages: "Idiomas",
     },
     summary:
-      "Engenheiro Frontend Sênior com mais de 10 anos de experiência construindo aplicações web para clientes enterprise globais, incluindo IBM, Pfizer e AKQA. Especialista no ecossistema React/TypeScript, com foco em arquitetura de componentes, performance e integração de APIs. Experiência complementar de backend com Node.js (APIs REST e camadas BFF) e experiência como Tech Lead conduzindo decisões arquiteturais em projetos greenfield e de modernização de legado. Atualmente aprofundando habilidades de integração com IA (MCP, Agentes de IA, RAG, LLMs) por meio de um MBA em Engenharia de Software com IA. Em busca de vagas sênior de Engenharia Frontend com integração de IA, focadas em produto e experiência do usuário.",
+      "Engenheiro Full Stack com mais de 10 anos de experiência construindo aplicações web para clientes enterprise globais, incluindo IBM, Pfizer e AKQA. Experiência mais profunda no ecossistema React/TypeScript — arquitetura de componentes, performance e integração de APIs — com trabalho real de backend em Node.js (APIs REST, camadas BFF, autenticação). Experiência como Tech Lead conduzindo decisões arquiteturais em projetos greenfield e de modernização de legado. Atualmente aprofundando integração com IA (MCP, Agentes de IA, RAG, LLMs) por meio de um MBA em Engenharia de Software com IA. Em busca de vagas sênior full stack ou com peso em frontend, focadas em produto e experiência do usuário.",
     skills: [
       {
         label: "Frontend",

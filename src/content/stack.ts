@@ -23,6 +23,12 @@ export const stackAreas: StackArea[] = [
       "Design systems, composition patterns and accessible components that stay consistent across teams, brands and years of product evolution.",
   },
   {
+    icon: Server,
+    title: "APIs & backend",
+    description:
+      "Node.js services: REST and GraphQL APIs, authentication and authorization, PostgreSQL, Docker — and BFF layers shaped by what the product needs.",
+  },
+  {
     icon: Workflow,
     title: "State & data flow",
     description:
@@ -39,12 +45,6 @@ export const stackAreas: StackArea[] = [
     title: "Design-to-code & motion",
     description:
       "Faithful implementation from design handoff, Tailwind-based systems, and animation with GSAP and Motion applied with restraint and intent.",
-  },
-  {
-    icon: Server,
-    title: "Backend for frontend",
-    description:
-      "Node.js APIs, authentication and authorization, pagination and BFF layers shaped by what the interface actually needs.",
   },
   {
     icon: Bot,

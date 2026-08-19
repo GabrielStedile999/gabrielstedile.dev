@@ -28,8 +28,8 @@ export const proofMetrics: ProofMetric[] = [
   },
   {
     value: 3,
-    title: "Stack layers owned",
+    title: "Stack layers in production",
     description:
-      "UI, API and AI — deepest in the interface, capable across the Node.js layer behind it, and expanding into LLM integration.",
+      "UI, API and AI — day-to-day work across React interfaces and the Node.js services behind them, now expanding into LLM integration.",
   },
 ];

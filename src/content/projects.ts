@@ -65,7 +65,7 @@ export const projects: Project[] = [
       "Worked design-to-code from high-fidelity handoffs with pixel-level fidelity",
     ],
     outcome:
-      "Shipped experiences that passed the layered compliance reviews pharma demands — proof that speed and rigor can coexist.",
+      "Shipped experiences that passed pharma's layered compliance reviews without missing delivery dates.",
     stack: ["React", "TypeScript", "Accessibility", "Design systems"],
     nda: true,
   },
@@ -163,6 +163,35 @@ export const projects: Project[] = [
     nda: true,
   },
   {
+    id: "necroforja",
+    title: "NecroForja — tabletop campaign manager",
+    client: "Personal · necroforja.com.br",
+    category: "personal",
+    summary:
+      "Full-stack campaign manager for Necromunda tabletop, live in production — with an AI rules assistant built on RAG.",
+    context:
+      "A complete product built end to end and running at necroforja.com.br: it manages a multi-cycle Necromunda campaign — players, gangs, challenges and rankings — with automated rating and wealth calculations.",
+    contributions: [
+      "Built the whole stack: Next.js App Router frontend, PostgreSQL with Drizzle ORM, and Auth.js authentication with role-protected routes",
+      "Implemented an AI rules assistant: RAG over indexed rulebooks with pgvector embeddings and Claude, answering with page citations",
+      "Set up automated tests (Vitest + Playwright e2e), seed data for local development and deployment on Vercel",
+    ],
+    outcome:
+      "A live product running a real campaign — full-stack and AI integration working together in production.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "RAG",
+      "Claude API",
+    ],
+    link: {
+      label: "View source on GitHub",
+      url: "https://github.com/GabrielStedile999/necroforja",
+    },
+  },
+  {
     id: "portfolio-ai",
     title: "gabrielstedile.dev — this site",
     client: "Personal · AI-assisted",
@@ -177,7 +206,7 @@ export const projects: Project[] = [
       "Owns the deploy pipeline: GitHub → Vercel, with Web Analytics in production",
     ],
     outcome:
-      "The site you're reading — shipped in days, not weeks, without giving up code quality.",
+      "The site you're reading — built in days through phased, reviewed deliveries.",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion", "AI agents"],
     link: {
       label: "View source on GitHub",

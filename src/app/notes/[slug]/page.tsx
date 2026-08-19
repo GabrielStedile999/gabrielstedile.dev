@@ -91,7 +91,7 @@ export default async function NotePage({ params }: PageProps) {
             <Link href="/" className="text-accent-to hover:underline">
               {site.name}
             </Link>{" "}
-            — senior frontend engineer. Want to talk?{" "}
+            — senior full-stack engineer. Want to talk?{" "}
             <a
               href={`mailto:${site.email}`}
               className="text-accent-to hover:underline"

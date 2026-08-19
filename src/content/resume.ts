@@ -20,7 +20,7 @@ export type ResumeSkillGroup = {
 
 export const resume = {
   summary:
-    "Senior Frontend Engineer with 10+ years of experience building web applications for global enterprise clients including IBM, Pfizer, and AKQA. Specialist in the React/TypeScript ecosystem, focused on component architecture, performance, and API integration. Complementary backend experience with Node.js (REST APIs and BFF layers) and Tech Lead experience driving architectural decisions across greenfield and legacy modernization projects. Currently deepening AI integration skills (MCP, AI Agents, RAG, LLMs) through an MBA in Software Engineering with AI. Seeking Senior Frontend Engineering roles with AI integration, focused on product and user experience.",
+    "Full Stack Engineer with 10+ years of experience building web applications for global enterprise clients including IBM, Pfizer, and AKQA. Deepest experience in the React/TypeScript ecosystem — component architecture, performance and API integration — with production backend work in Node.js (REST APIs, BFF layers, authentication). Tech Lead experience driving architectural decisions across greenfield and legacy modernization projects. Currently deepening AI integration skills (MCP, AI Agents, RAG, LLMs) through an MBA in Software Engineering with AI. Seeking senior full-stack or frontend-heavy roles focused on product and user experience.",
 
   skills: [
     {

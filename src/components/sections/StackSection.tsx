@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { Dict } from "@/i18n";
 
 /** Icons aligned by index with dict.stack.areas. */
-const AREA_ICONS = [Component, Workflow, Gauge, Palette, Server, Bot];
+const AREA_ICONS = [Component, Server, Workflow, Gauge, Palette, Bot];
 
 export function StackSection({ dict }: { dict: Dict }) {
   const t = dict.stack;

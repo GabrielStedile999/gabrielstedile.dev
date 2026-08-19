@@ -1,7 +1,7 @@
 export const site = {
   name: "Gabriel Stedile",
   initials: "GS",
-  role: "Senior Frontend Engineer",
+  role: "Senior Full Stack Engineer",
   tagline: "React · TypeScript · Node.js · AI Integration",
   location: "Florianópolis, Brazil",
   availability: "Open to remote roles",

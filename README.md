@@ -1,6 +1,6 @@
 # gabrielstedile.dev
 
-Personal portfolio of **Gabriel Stedile** — Senior Frontend Engineer (React · TypeScript · Node.js · AI Integration).
+Personal portfolio of **Gabriel Stedile** — Senior Full Stack Engineer (React · TypeScript · Node.js · AI Integration).
 
 **Live:** [gabrielstedile.dev](https://gabrielstedile.dev) · [Português](https://gabrielstedile.dev/pt) · [Resume](https://gabrielstedile.dev/resume)
 

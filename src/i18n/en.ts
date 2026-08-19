@@ -11,9 +11,9 @@ export const en: Dict = {
   htmlLang: "en",
 
   meta: {
-    title: "Gabriel Stedile | Senior Frontend Engineer",
+    title: "Gabriel Stedile | Senior Full Stack Engineer",
     description:
-      "Senior Frontend Engineer — React, TypeScript, Node.js and AI integration. 10+ years building web applications for global clients.",
+      "Senior Full Stack Engineer — React, TypeScript, Node.js and AI integration. 10+ years building web products for global clients.",
   },
 
   nav: {
@@ -35,11 +35,11 @@ export const en: Dict = {
   },
 
   hero: {
-    eyebrow: "Frontend engineering with product sense",
+    eyebrow: "Full-stack engineering with product sense",
     titlePre: "Interfaces that make the complex ",
     titleGradient: "feel simple.",
-    lead: "React-first and product-shaped: I turn business requirements into fast, accessible web applications — and the Node.js layer behind them — for global brands and growing startups.",
-    monoLine: "Senior Frontend Engineer / Full Stack Capable / AI Integration",
+    lead: "I build web products end to end — React and TypeScript on the front, Node.js APIs behind them — for global brands and growing startups.",
+    monoLine: "Senior Full Stack Engineer / React · Node.js / AI Integration",
     ctaWork: "Explore my work",
     ctaResume: "Download resume",
     availability: "Open to remote roles",
@@ -57,7 +57,7 @@ export const en: Dict = {
       a11yLabel: "a11y:",
       a11yValue: "keyboard + screen reader tested",
       aiLabel: "ai:",
-      aiValue: "agent tools connected · 0 hallucinated pixels",
+      aiValue: "LLM features · agent workflows",
     },
     stats: {
       years: "Years of experience",
@@ -71,29 +71,31 @@ export const en: Dict = {
 
   profile: {
     eyebrow: "Profile",
-    titlePre: "React-first. AI-forward. ",
-    titleGradient: "Grounded in product reality.",
+    titlePre: "Frontend depth, ",
+    titleGradient: "full-stack range.",
     paragraphs: [
-      "I'm Gabriel, a Florianópolis-based frontend engineer with 10+ years across software houses, fintech, SaaS and global consultancy. My deepest experience is in React and TypeScript — delivering for clients like IBM, Pfizer, Audi, AKQA and BCW, where quality bars and deadlines are both non-negotiable.",
-      "When the product needs it, I go further down the stack: I've built a B2B SaaS API from scratch in Node.js, implemented authentication, authorization and pagination, and shaped BFF layers around what interfaces actually consume.",
+      "I'm Gabriel, a full-stack engineer based in Florianópolis, with 10+ years across software houses, fintech, SaaS and global consultancy. Most of that time was spent in React and TypeScript, delivering for clients like IBM, Pfizer, Audi, AKQA and BCW.",
+      "The backend is part of my routine, not a footnote: I've built a B2B SaaS API from scratch in Node.js, worked with authentication, authorization, PostgreSQL and Docker, and designed BFF layers around what interfaces actually consume.",
       "Right now I'm deepening AI integration — agents, LLM-powered features and AI-assisted engineering workflows — through an MBA in Software Engineering with AI and hands-on projects.",
     ],
     principles: [
-      "Own the interface end-to-end — from design handoff to production metrics.",
-      "Treat loading, empty and error states as part of the product, not leftovers.",
-      "Ship fast without leaving code the next person can't read.",
+      "Own the feature end-to-end — from design handoff to the API and production metrics.",
+      "Interfaces built for the real world — including loading, error and empty states.",
+      "Verifiable quality: automated tests and code review as part of the flow, not an extra step.",
+      "Direct communication with product and design — aligning before building avoids rework after.",
+      "Deliver fast without compromising quality — readable, documented code, ready for the next person to build on.",
     ],
     asideAria: "Developer profile summary",
     photoAlt: "Portrait of Gabriel Stedile",
     cardTagline:
-      "Frontend engineer for product teams that care about the details.",
+      "Full-stack engineer for product teams — from interface to API.",
     basedIn: {
       label: "Based in",
       value: "Florianópolis, Brazil · remote-friendly",
     },
     deepest: {
       label: "Deepest experience",
-      value: "React, TypeScript, Next.js, Node.js BFF",
+      value: "React, TypeScript, Next.js, Node.js",
     },
     expanding: {
       label: "Expanding into",
@@ -131,19 +133,19 @@ export const en: Dict = {
 
   stack: {
     eyebrow: "Stack",
-    titlePre: "Organized by ",
-    titleGradient: "responsibility",
-    titlePost: ", not by logo count.",
+    titlePre: "What I solve, ",
+    titleGradient: "not just what I use.",
+    titlePost: "",
     description:
-      "Tools change. Knowing which component boundary, data contract or millisecond deserves attention is what stays.",
+      "More than a list of technologies: the areas where I take responsibility inside a product — from interface to API.",
     areas: stackAreas.map(({ title, description }) => ({ title, description })),
   },
 
   proof: {
     eyebrow: "Proof",
-    title: "Signals of sustained delivery.",
+    title: "The numbers behind the work.",
     description:
-      "Not vanity numbers — the scope and repetition behind a decade of shipping.",
+      "Quick context for the details: the volume and kind of delivery behind everything else on this site.",
     metrics: proofMetrics,
   },
 
@@ -159,16 +161,15 @@ export const en: Dict = {
     titlePre: "Let's build something people ",
     titleGradient: "enjoy using.",
     description:
-      "Tell me about the product, the stack and what success looks like — I'll bring frontend depth and the range to go further when needed.",
+      "Tell me about the product, the stack and what success looks like — I work across the whole feature, from interface to API.",
     openToWork: "Open to work",
-    copy: "Best fit: senior frontend or frontend-leaning full-stack roles in product-driven teams — remote, Brazil or international. Replies within 1–2 business days.",
+    copy: "Best fit: senior full-stack or frontend-heavy roles in product-driven teams — remote, Brazil or international. Replies within 1–2 business days.",
     emailBtn: "Email me",
     resumeBtn: "Resume",
   },
 
   footer: {
-    tagline:
-      "Senior Frontend Engineer — building interfaces that move products forward.",
+    tagline: "Senior Full Stack Engineer — web products from interface to API.",
     ariaLabel: "Footer",
     links: [
       { label: "Home", href: "/" },
@@ -197,7 +198,7 @@ export const en: Dict = {
   resume: {
     metaTitle: "Resume",
     metaDescription:
-      "Resume of Gabriel Stedile — Senior Frontend Engineer with 10+ years of experience in React, TypeScript, Node.js and AI integration.",
+      "Resume of Gabriel Stedile — Senior Full Stack Engineer with 10+ years of experience in React, TypeScript, Node.js and AI integration.",
     path: "/resume",
     actionsAria: "Resume actions",
     backLabel: "gabrielstedile.dev",
@@ -209,7 +210,7 @@ export const en: Dict = {
       aria: "PT · Ver currículo em português",
     },
     roleLine:
-      "Senior Frontend Engineer | React · TypeScript · Node.js · AI Integration",
+      "Senior Full Stack Engineer | React · TypeScript · Node.js · AI Integration",
     availability: "Open to remote roles",
     sections: {
       summary: "Professional Summary",

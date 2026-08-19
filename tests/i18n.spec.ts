@@ -6,7 +6,7 @@ test.describe("Portuguese pages", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: /parecer simples/i }),
     ).toBeVisible();
-    await expect(page).toHaveTitle(/Engenheiro Frontend Sênior/);
+    await expect(page).toHaveTitle(/Engenheiro Full Stack Sênior/);
     await expect(
       page.getByRole("navigation", { name: "Navegação principal" }),
     ).toBeVisible();

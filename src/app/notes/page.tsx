@@ -9,7 +9,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Notes",
   description:
-    "Short notes on frontend engineering, AI-assisted workflows and building products — by Gabriel Stedile.",
+    "Short notes on full-stack web development, AI-assisted workflows and building products — by Gabriel Stedile.",
   alternates: { canonical: "/notes" },
 };
 
@@ -42,7 +42,7 @@ export default function NotesPage() {
           Notes from the workbench.
         </h1>
         <p className="text-muted max-w-xl text-base text-pretty">
-          Short write-ups on frontend engineering, AI-assisted workflows and the
+          Short write-ups on full-stack development, AI-assisted workflows and the
           practical side of shipping products.
         </p>
       </header>

@@ -8,18 +8,19 @@ import "./globals.css";
 
 const SITE_URL = "https://gabrielstedile.dev";
 const DESCRIPTION =
-  "Senior Frontend Engineer — React, TypeScript, Node.js and AI integration. 10+ years building web applications for global clients.";
+  "Senior Full Stack Engineer — React, TypeScript, Node.js and AI integration. 10+ years building web products for global clients.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Gabriel Stedile | Senior Frontend Engineer",
+    default: "Gabriel Stedile | Senior Full Stack Engineer",
     template: "%s | Gabriel Stedile",
   },
   description: DESCRIPTION,
   keywords: [
     "Gabriel Stedile",
-    "Senior Frontend Engineer",
+    "Senior Full Stack Engineer",
+    "Full Stack Developer",
     "React",
     "TypeScript",
     "Next.js",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "gabrielstedile.dev",
-    title: "Gabriel Stedile | Senior Frontend Engineer",
+    title: "Gabriel Stedile | Senior Full Stack Engineer",
     description: DESCRIPTION,
     locale: "en_US",
     images: [
@@ -45,13 +46,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Gabriel Stedile — Senior Frontend Engineer. Interfaces that make complex products feel simple.",
+        alt: "Gabriel Stedile — Senior Full Stack Engineer. Interfaces that make the complex feel simple.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gabriel Stedile | Senior Frontend Engineer",
+    title: "Gabriel Stedile | Senior Full Stack Engineer",
     description: DESCRIPTION,
     images: ["/og.png"],
   },
@@ -65,7 +66,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Gabriel Stedile",
-  jobTitle: "Senior Frontend Engineer",
+  jobTitle: "Senior Full Stack Engineer",
   url: SITE_URL,
   email: "mailto:gabriel.stedile9@gmail.com",
   image: `${SITE_URL}/og.png`,
@@ -88,6 +89,7 @@ const personJsonLd = {
     "TypeScript",
     "Next.js",
     "Node.js",
+    "Full Stack Development",
     "Frontend Engineering",
     "AI Integration",
     "LLM Integration",

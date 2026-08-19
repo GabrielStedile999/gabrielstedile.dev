@@ -8,19 +8,19 @@ export const workingHabits: WorkingHabit[] = [
   {
     title: "End-to-end ownership",
     description:
-      "A feature isn't done at merge. I follow it through rollout, real-user metrics and feedback — and adjust when production disagrees with the plan.",
+      "I work with an owner's mindset: I get involved in the problem beyond the code and commit to the impact of what ships — following metrics and feedback after launch, not just until the merge.",
     punchline: "Shipped means measured",
   },
   {
-    title: "Edge cases first",
+    title: "Continuous learning",
     description:
-      "Loading, empty and error states are designed with the happy path, not after it. That's where users actually decide if a product feels solid.",
-    punchline: "The details are the product",
+      "Every project expands the repertoire. Studying and adapting is a life philosophy for me — knowledge that turns into real work.",
+    punchline: "Dedication that ships",
   },
   {
     title: "Alignment as a habit",
     description:
       "I turn vague requirements into explicit contracts, surface trade-offs early, and keep product, design and engineering moving in the same direction.",
-    punchline: "Fewer surprises, faster teams",
+    punchline: "Fewer surprises, better-informed decisions",
   },
 ];
