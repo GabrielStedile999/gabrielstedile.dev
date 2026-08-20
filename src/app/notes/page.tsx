@@ -42,8 +42,8 @@ export default function NotesPage() {
           Notes from the workbench.
         </h1>
         <p className="text-muted max-w-xl text-base text-pretty">
-          Short write-ups on full-stack development, AI-assisted workflows and the
-          practical side of shipping products.
+          Short write-ups on full-stack development, AI-assisted workflows and
+          the practical side of shipping products.
         </p>
       </header>
 

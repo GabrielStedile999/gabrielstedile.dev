@@ -9,7 +9,7 @@ export const workingHabits: WorkingHabit[] = [
     title: "End-to-end ownership",
     description:
       "I work with an owner's mindset: I get involved in the problem beyond the code and commit to the impact of what ships — following metrics and feedback after launch, not just until the merge.",
-    punchline: "Shipped means measured",
+    punchline: "Value delivered, backed by metrics",
   },
   {
     title: "Continuous learning",

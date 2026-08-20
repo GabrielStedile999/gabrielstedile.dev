@@ -68,6 +68,7 @@ export const en: Dict = {
   },
 
   marqueeAria: "Core technologies",
+  stackStrip: { title: "The technologies, by area" },
 
   profile: {
     eyebrow: "Profile",

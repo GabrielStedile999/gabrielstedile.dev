@@ -63,6 +63,7 @@ export const pt: Dict = {
   },
 
   marqueeAria: "Principais tecnologias",
+  stackStrip: { title: "As tecnologias, por área de atuação" },
 
   profile: {
     eyebrow: "Perfil",
@@ -446,7 +447,7 @@ export const pt: Dict = {
         title: "Ownership de ponta a ponta",
         description:
           "Trabalho com senso de dono: me envolvo no problema além do código e me comprometo com o impacto e o valor real da entrega — acompanhando métricas e feedback depois do lançamento, não só até o merge.",
-        punchline: "Entregue significa medido",
+        punchline: "Valor realizado com métricas",
       },
       {
         title: "Aprendizado contínuo",

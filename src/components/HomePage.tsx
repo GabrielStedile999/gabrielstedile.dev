@@ -2,12 +2,12 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
+import { StackConstellation } from "@/components/sections/StackConstellation";
 import { Journey } from "@/components/sections/Journey";
 import { Profile } from "@/components/sections/Profile";
 import { Projects } from "@/components/sections/Projects";
 import { Proof } from "@/components/sections/Proof";
 import { StackSection } from "@/components/sections/StackSection";
-import { TechMarquee } from "@/components/sections/TechMarquee";
 import { WorkingStyle } from "@/components/sections/WorkingStyle";
 import type { Dict } from "@/i18n";
 
@@ -32,7 +32,7 @@ export function HomePage({ dict }: { dict: Dict }) {
       <Navbar dict={dict} />
       <main className="flex flex-1 flex-col">
         <Hero dict={dict} />
-        <TechMarquee dict={dict} />
+        <StackConstellation dict={dict} />
         <Profile dict={dict} />
         <Journey dict={dict} />
         <Projects dict={dict} />

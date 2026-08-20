@@ -58,6 +58,7 @@ export type Dict = {
   };
 
   marqueeAria: string;
+  stackStrip: { title: string };
 
   profile: {
     eyebrow: string;
