@@ -5,7 +5,7 @@ import { getDict } from "@/i18n";
 const dict = getDict("pt");
 
 export const metadata: Metadata = {
-  title: dict.meta.title,
+  title: { absolute: dict.meta.title },
   description: dict.meta.description,
   alternates: {
     canonical: "/pt",
